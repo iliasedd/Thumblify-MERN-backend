@@ -5,6 +5,7 @@ import cors from "cors"
 import "dotenv/config"
 import connectDB from "./configs/db.js"
 import AuthRouter from "./routes/AuthRoutes.js"
+import ThumbnailRouter from "./routes/ThumbnailRoutes.js"
 
 declare module "express-session" {
   interface SessionData {
@@ -17,6 +18,7 @@ await connectDB()
 
 const app = express()
 
+app.use(express.json())
 app.use(cors())
 app.use(
   session({
@@ -36,10 +38,11 @@ app.use(
     }),
   }),
 )
-app.use(express.json())
-app.use("/api/auth", AuthRouter)
 
-app.get("/", (req: Request, res: Response) => {
+app.use("/api/auth", AuthRouter)
+app.use("/api/thumbnails", ThumbnailRouter)
+
+app.get("/", async (req: Request, res: Response) => {
   res.send("Server is Live !")
 })
 
