@@ -31,9 +31,9 @@ export const registerUser = async (req: Request, res: Response) => {
         email: newUser.email,
       },
     })
-  } catch (error: any) {
+  } catch (error) {
     console.log(error)
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ error })
   }
 }
 
@@ -64,9 +64,9 @@ export const loginUser = async (req: Request, res: Response) => {
         email: user.email,
       },
     })
-  } catch (error: any) {
+  } catch (error) {
     console.log(error)
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ error })
   }
 }
 
@@ -87,8 +87,8 @@ export const verifyUser = async (req: Request, res: Response) => {
     const user = await User.findById(userId).select("-password")
 
     return res.json({ user })
-  } catch (error: any) {
+  } catch (error) {
     console.log(error)
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ error })
   }
 }

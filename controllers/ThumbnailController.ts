@@ -14,7 +14,6 @@ export const getThumbnails = async (req: Request, res: Response) => {
     })
   } catch (error) {
     console.log(error)
-
     res.status(500).json({ error })
   }
 }
@@ -41,7 +40,6 @@ export const getThumbnailById = async (req: Request, res: Response) => {
     res.json({ thumbnail })
   } catch (error) {
     console.log(error)
-
     res.status(500).json({ error })
   }
 }
@@ -71,7 +69,6 @@ export const deleteThumbnail = async (req: Request, res: Response) => {
     res.json({ message: "Thumbnail deleted successfully" })
   } catch (error) {
     console.log(error)
-
     res.status(500).json({ error })
   }
 }
@@ -124,7 +121,6 @@ export const generateThumbnail = async (req: Request, res: Response) => {
     })
   } catch (error) {
     console.log(error)
-
     res.status(500).json({ error })
   }
 }
