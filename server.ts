@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express"
 import session from "express-session"
-import MongoStore from "connect-mongo"
 import cors from "cors"
+import MongoStore from "connect-mongo"
 import "dotenv/config"
 import connectDB from "./configs/db.js"
 import AuthRouter from "./routes/AuthRoutes.js"
@@ -22,7 +22,7 @@ const app = express()
 app.use(express.json())
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: ["http://localhost:5173"],
     credentials: true,
   }),
 )

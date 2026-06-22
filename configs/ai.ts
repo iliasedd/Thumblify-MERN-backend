@@ -109,10 +109,10 @@ export default async function generateImage({
 
   if (!parts) throw new Error("Unexpected response")
 
-  const data = parts[0]?.inlineData?.data
+  const imageData = parts[0]?.inlineData?.data
 
-  if (data) {
-    finalBuffer = Buffer.from(data, "base64")
+  if (imageData) {
+    finalBuffer = Buffer.from(imageData, "base64")
   }
 
   if (!finalBuffer) throw new Error("Failed to generate image")

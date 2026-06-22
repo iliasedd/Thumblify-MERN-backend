@@ -1,1 +1,1 @@
-# thumblify-mern-backend
+# thumblify-MERN-backend
